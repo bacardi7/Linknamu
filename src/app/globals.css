@@ -1,26 +1,37 @@
 @import "tailwindcss";
 
+/* 화면 전체에서 쓰는 색을 한곳에 모아 둔 "디자인 변수"입니다. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background-from: #fffaf3; /* 크림색 */
+  --background-via: #fdf0e3;
+  --background-to: #fbdcc6; /* 연한 살구색 */
+  --foreground: #3d2e26; /* 따뜻한 짙은 갈색 글자 */
+  --muted: #8a7266; /* 소개 문구처럼 한 톤 낮춘 글자 */
 }
 
 @theme inline {
-  --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-muted: var(--muted);
+  --font-sans: var(--font-pretendard), system-ui, sans-serif;
 }
 
 body {
-  background: var(--background);
+  min-height: 100dvh;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* 크림색에서 살구색으로 번지는 배경. 위쪽에 은은한 빛을 하나 더 얹었습니다. */
+  background:
+    radial-gradient(
+      120% 60% at 50% 0%,
+      rgba(255, 255, 255, 0.7) 0%,
+      rgba(255, 255, 255, 0) 60%
+    ),
+    linear-gradient(
+      170deg,
+      var(--background-from) 0%,
+      var(--background-via) 50%,
+      var(--background-to) 100%
+    );
+  background-attachment: fixed;
+  font-family: var(--font-sans);
+  word-break: keep-all; /* 한글이 단어 중간에서 줄바꿈되지 않게 합니다. */
 }

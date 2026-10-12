@@ -14,13 +14,14 @@ export type Profile = {
 };
 
 export const profile: Profile = {
-  name: "홍길동",
-  bio: "인류 최강 바이브코더",
-  imageUrl: "",
+  name: "홍개발",
+  bio: "풀스택 개발자 | 요즘에는 AI 개발에 관심이 많아요",
+  imageUrl: "https://placehold.co/150x150/orange/white",
 };
 
 export const links: LinkItem[] = [
-  { label: "GitHub", url: "https://github.com/" },
-  { label: "LinkedIn", url: "https://www.linkedin.com/" },
-  { label: "Blog", url: "https://example.com/" },
+  // 대괄호 [ ] 부분은 아직 정해지지 않은 자리표시자입니다. 실제 값으로 바꿔 주세요.
+  { label: "😊 깃허브", url: "https://github.com/[내 아이디]" },
+  { label: "🤷‍♀️ 블로그", url: "https://[내 블로그 주소]" },
+  { label: "✌️ 이메일", url: "mailto:[내 이메일]" },
 ];
